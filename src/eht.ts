@@ -1,10 +1,7 @@
-/**
-* @param {NS} ns
-**/
 import { NS } from '@ns'
 
 export async function main(ns: NS): Promise<void> {
-    const target = ns.args[0];
+    const target = ns.args[0].toString();
     const moneyThresh = ns.getServerMaxMoney(target) * 0.75;
     const securityThresh = ns.getServerMinSecurityLevel(target) + 5;
     const initialPortsRequired = ns.getServerNumPortsRequired(target);
